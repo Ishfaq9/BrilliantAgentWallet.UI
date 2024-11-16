@@ -1,0 +1,136 @@
+// .recharge-page{
+//     // padding: 30px;
+//     // margin-top: 50px;
+// }
+.main {
+    height: auto;
+    margin-top: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    padding: 25px; 
+    border: 2px solid #bcbcbc;
+}
+.lable{
+    font-size: 20px;
+    color: #f37067;
+}
+.add-btn{
+    background-color: #1a3a54 ;
+    // background: 100%;
+    width: 100%;
+    padding: 8px;
+    float: left;
+    color: white;
+    border-radius: 5px;
+    // border: 1px solid #f37067;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.view-btn{
+    background-color: #1a3a54 ;
+    // background: 100%;
+    width: 100%;
+    padding: 6px;
+    float: left;
+    color: white;
+    border-radius: 5px;
+    // border: 1px solid #f37067;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-btn:hover {
+    padding: 7px;
+    border: 1px solid #f37067;
+}
+.view-btn:hover {
+    padding: 7px;
+    border: 1px solid #f37067;
+}
+.container{
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.summary {
+    border-radius: 10px;
+    padding: 10px;
+    border: 3px solid white;
+}
+
+.lable_Summary {
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 2px solid white;
+    color: #1a3a54;
+    padding-left: 10px;
+
+}
+
+.Summary_Status {
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 2px solid white;
+    color: #1a3a54;
+    padding-left: 10px;
+}
+.listTitle{
+    font-size: 18px;
+    font-weight: 500;
+    color: #f37067;
+    text-align: center;
+    margin-bottom: 25px;
+    text-decoration: underline;
+    text-decoration-style: double;
+    text-decoration-color: #bcbcbc;
+    text-underline-offset: 3px;
+}
+@media screen and (max-width: 768px){
+    .add-btn{
+        padding: 7px;
+        font-size: 15px;
+        margin-bottom: 15px;
+        border-radius: 3px;
+    }
+    .view-btn{
+        padding: 3px;
+        font-size: 12px;
+        border-radius: 3px;
+    }
+    .main{
+        padding: 17px;
+    }
+    .lable{
+        font-size: 14px;
+    }
+    .form-control{
+        height: 30px;
+    }
+    input[type="date"] {
+        font-size: 13px;
+    }
+    tr > td{
+        font-weight: 400;
+        font-size: 13px;
+    }
+    th{
+        color: #1a3a54;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    #scontentname::placeholder{
+        font-size: 13px;
+    }
+    .listTitle{
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}

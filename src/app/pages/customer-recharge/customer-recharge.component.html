@@ -1,0 +1,83 @@
+<!-- <app-agent-balance (agentBalanceChanged)="updateAgentBalance($event)"></app-agent-balance> -->
+<div class="container recharge-page">
+    <!--  <app-agent-balance></app-agent-balance> -->
+    <app-agent-balance (agentBalanceChanged)="updateAgentBalance($event)"></app-agent-balance>
+    <div class="main">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-12">
+                <h2 class="lable_Recharge">Amount To Transfer (BDT): <span style="color: #f37067;"></span></h2>
+            </div>
+            <div class="col-md-12 col-sm-12 col-12">
+                <!--    <input type="number" class="form-control" placeholder="Enter your amount" [(ngModel)]="topupAmount "> -->
+                @if(checkbox==true)
+                {
+                <input type="number" class="form-control"
+                    placeholder="Enter Your Amount (Minimum {{AgentBalanceDto.MinimumCustomerRechargeForRC}} Taka)"
+                    [(ngModel)]="topupAmount" min="0">
+                }@else {
+                <input type="number" class="form-control"
+                    placeholder="Enter Your Amount (Minimum {{AgentBalanceDto.MinimumCustomerRechargePerTransection}} Taka)"
+                    [(ngModel)]="topupAmount" min="0">
+                }
+
+
+            </div>
+            <div class="col-md-12 col-sm-12">
+                <h2 class="lable_Recharge">Mobile Number:</h2>
+            </div>
+            <div class="col-md-12 col-sm-12">
+                <input type="tel" class="form-control" placeholder="8801******* Or 01*******" [(ngModel)]="topupNumber">
+            </div>
+
+
+            <div class="col-md-12 col-sm-12">
+                <h2 class="lable_Recharge">With Referral Code? : <input class="checkbox" type="checkbox" value=""
+                        id="flexCheckDefault" (change)="checkBoxCheck($event)"> </h2>
+            </div>
+
+            @if(checkbox==true)
+            {
+            <div class="col-md-12 col-sm-12">
+                <input type="text" class="form-control" placeholder="Enter Your Referral Code" [(ngModel)] ="ReferralCode"
+                    maxlength="6" oninput="this.value = this.value.toUpperCase()">
+            </div>
+            }
+
+
+
+
+
+            <!-- <h1> {{topupAmount}} </h1> -->
+            <div class="col-md-6 col-sm-6 col-6">
+                <button type="button" class="topUp-btn" (click)="topUp()">Top-Up</button>
+            </div>
+            <div class="col-md-6 col-sm-6 col-6">
+                <button type="button" class="topUpHistory-btn u-shadow" routerLink="/top-up-history">Top-Up
+                    History</button>
+            </div>
+        </div>
+        <!-- <div class="row ">
+            <div class="col-md-3 col-sm-4 col-12">
+                <h2 class="lable_Recharge">Recharge Amount:</h2>
+            </div>
+            <div class="col-md-6 col-sm-8 col-12">
+                <input type="number" class="form-control"
+                    placeholder="Enter your amount">
+            </div>
+            <div class="col-md-3 col-sm-12 col-12">
+                <button type="button" class="recharge-btn" (click)="recharge()">Recharge</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-4">
+                <h2 class="lable_Recharge">Referral:</h2>
+            </div>
+            <div class="col-md-9 col-sm-8">
+                <input type="text" class="form-control" placeholder="Referral Code">
+            </div>
+        </div> -->
+    </div>
+    <div class="Alert">
+        <img class="img" src="./assets/images/Alert.jpeg" alt="" height="200px" width="auto">
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container agent_page">
+    <div class="row">
+        <div class="col-8">
+            <h5 id="agent_title">Agent Wallet </h5>
+        </div>
+        <div class="col-4">
+            <button class="notification" routerLink="notice-board"><i class="bi bi-bell" ></i></button>
+            <span class="notification-count" *ngIf="unreadCount > 0">{{ unreadCount }}</span>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-12">
+        <ul class="tabs-container">
+            
+            <li id="topUp" routerLink="customer-recharge" routerLinkActive="activeLink" class="tab-link1">Top-Up</li>
+            <li id="recharge" routerLink="agent-recharge" routerLinkActive="activeLink" class="tab-link2">Recharge</li>   
+            <li id="summary" routerLink="agent-summary" routerLinkActive="activeLink" class="tab-link3">Summary</li>       
+        </ul>
+    </div>
+</div>
+
+<!-- <div *ngIf="activeTab == 'Top-Up' " class="w-100">
+    <app-customer-recharge></app-customer-recharge>
+</div> -->
+<!-- <div *ngIf="activeTab == 'TopUp-History' " class="w-100">
+    <app-top-up-history></app-top-up-history>
+</div>
+<div *ngIf="activeTab == 'Recharge' " class="w-100">
+    <app-agent-recharge></app-agent-recharge>
+</div> -->

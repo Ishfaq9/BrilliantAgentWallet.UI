@@ -1,0 +1,50 @@
+<div class="container recharge-page">
+    <div class="main">
+      <div class="rechargeHistoryTitle"> RECHARGE HISTORY</div>
+        <div class="search row">
+            <div class="col-md-1 col-sm-4 col-2">
+                <h2 class="lable">From:</h2>
+            </div>
+            <div class="col-md-11 col-sm-8 col-10">
+              
+                <input type="date" class="form-control" id="scontentname" placeholder="Short Content name" [(ngModel)]="dateFrom" (ngModelChange)="updateMinDate()">
+            </div>
+            <div class="col-md-1 col-sm-4 col-2">
+                <h2 class="lable">To:</h2>
+            </div>
+            <div class="col-md-11 col-sm-8 col-10">
+             
+                <input type="date" class="form-control" id="scontentname" placeholder="Short Content name" [(ngModel)]="dateTo" [min]="minDate">
+            </div><br>
+            <div class="col-md-12 col-sm-12 col-12">
+                <button type="button" class="search-btn" (click)="GetAgentRechargeHistory()">Search</button>
+            </div>
+        </div>
+        <div class="details" style="height: 320px; overflow-y: scroll;">
+            <table class="table table-hover table-responsive table-striped">
+                <thead style="text-align: center;">
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Vendor</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Bonus</th>
+                    <!-- <th scope="col">Bonus</th> -->
+                  </tr>
+                </thead>
+                <tbody style="text-align: center;">
+                  <tr *ngFor="let item of agentRechargeHistoryDto">
+                    <td scope="row"><span>{{item.TransactionDateTime}}</span></td>
+                    <td> <span>{{item.Vendor}}</span> </td>
+                    <td><span style="font-weight: 600;">&#2547; </span> <span>{{item.Amount}}</span> </td>
+                    <td><span style="font-weight: 600;">&#2547; </span> <span>{{item.CommissionaAmount}}</span> </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        <div class="row py-3 px-4">
+          <div class="col-12">
+            <p class="text-start"><b>Total: </b>&#2547;{{TotalAmount}}</p>
+          </div>
+        </div>
+    </div>
+</div>

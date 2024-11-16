@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <system.web>
+    <!-- Adjusting the maxRequestLength and adding maxQueryStringLength for longer URLs and query strings -->
+    <httpRuntime maxRequestLength="8192" maxQueryStringLength="20480" />
+
+    <!-- Forms authentication settings with requireSSL for secure cookies -->
+    <authentication mode="Forms">
+      <forms requireSSL="true" />
+    </authentication>
+
+    <!-- Session state settings to ensure cookies are used -->
+    <sessionState cookieless="UseCookies" />
+  </system.web>
+  
+  <system.webServer>
+    <security>
+      <!-- Enabling request filtering and setting limits for max content length, URL length, and query string length -->
+      <requestFiltering allowDoubleEscaping="true">
+        <requestLimits maxAllowedContentLength="30000000" maxUrl="4096" maxQueryString="20480" />
+      </requestFiltering>
+    </security>
+    
+    <rewrite>
+      <rules>
+        <!-- Rule for Angular routes to rewrite URLs to index.html -->
+        <rule name="Angular Routes" stopProcessing="true">
+          <match url=".*" />
+          <conditions logicalGrouping="MatchAll">
+            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+            <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+          </conditions>
+          <action type="Rewrite" url="/AgentWalletWeb/index.html" />
+        </rule>
+
+        <!-- Rule to redirect HTTP requests to HTTPS -->
+        <rule name="Redirect to https" enabled="true" stopProcessing="true">
+          <match url="(.*)" />
+          <conditions>
+            <add input="{HTTPS}" pattern="off" ignoreCase="true" />
+          </conditions>
+          <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
+        </rule>
+      </rules>
+    </rewrite>
+    
+    <!-- Enable default document -->
+    <defaultDocument enabled="true" />
+  </system.webServer>
+</configuration>

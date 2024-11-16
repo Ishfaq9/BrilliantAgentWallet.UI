@@ -1,0 +1,83 @@
+<div class="col-lg-12 text-center"
+    style="background-color: #1a3a54; height: 50px; align-items: center; display: flex; justify-content: center;">
+    <span style="font-size: 20px; color: #f37067; font-weight: 500;">Agent Locator</span>
+</div>
+
+<div class="container-fluid registration-main">
+    <form [formGroup]="regDtoForm" (ngSubmit)="Submit()">
+        <div class="row">
+            <div class="form-group" >
+                <div class="district"><label for="" class="label-style">জেলা:</label>
+                        <select id="selectedDistrict" formControlName="District" class="form-control select-style"
+                        (change)='GetSubDistrictByDistrictId($event)' required>
+                        <option selected disabled value="">আপনার জেলা নির্বাচন করুন</option>
+                        <option *ngFor="let item of district" [value]="item.Id">{{item.Name+' ('+item.NameInBangla+')'}}
+                        </option>
+                    </select>
+                    
+                </div>
+
+                <div class="thana">
+                    <label for="" class="label-style">থানা:</label>
+                    <select id="selectedUpaZila" formControlName="SubDistric" class="form-control select-style">
+                        <option selected disabled value="">থানা নির্বাচন করুন</option>
+                        <option *ngFor="let item of subDistrict" [value]="item.Id">{{item.Name+'
+                            ('+item.NameInBangla+')'}}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="postalCode">
+                    <label for="" class="label-style">পোস্ট কোড:</label>
+                    <input type="number" class="form-control input-style" formControlName="Postalcode"
+                        placeholder="পোস্ট কোড দিন" min="0"/>
+                </div>
+
+                <div class="row" style="padding: 0% 0%;">
+                    <div class="col-6">
+                        <button type="submit" class="submit-btn" id="agentSubmit">Search</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="cancel-btn" id="agentSubmit"
+                            (click)="resetTheForm()">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- <div class="agent-locator-container">
+        <mat-card *ngFor="let agentLocatorDto of agentLocatorDto" class="agent-card">
+            <mat-card-content>
+                <div class="agent-info">
+                    <h3>Agnet Name: {{agentLocatorDto.AgentName}}</h3>
+                    <p>Phone: {{agentLocatorDto.AgentPhone}}</p>
+                    <p>Address: {{agentLocatorDto.AgentAddress}}</p>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div> 
+    ishfaq rahmanh
+    -->
+
+    <div  class="agent-locator-container" >
+        <div  class="agent-locator-content" *ngIf="agentLocatorDto.length > 0">
+            <div *ngFor="let agentLocatorDto of agentLocatorDto" class="agent-card">
+                <div class="agent-info">
+                    <h4 class="agent-title">Agent Name:</h4>
+                    <h3 class="agent-name">{{agentLocatorDto.AgentName}}</h3>
+    
+                    <h4 class="agent-label">Mobile:</h4>
+                    <h3 class="agent-phone">{{agentLocatorDto.AgentPhone}}</h3>
+    
+                    <hr class="separator">
+    
+                    <p class="agent-address">
+                        {{agentLocatorDto.AgentAddress}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div #scrollTarget></div>

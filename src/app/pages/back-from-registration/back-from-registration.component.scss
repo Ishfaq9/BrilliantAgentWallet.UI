@@ -1,0 +1,123 @@
+
+body{
+  background-color: #D9EEEE;
+}
+.main{
+  background-color: #D9EEEE;
+  height: 100vh;
+}
+.agent_page{
+  background-color: #1a3a54;
+  color: #f1f1f1;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top:2px solid #bcbcbc;
+}
+#agent_title{
+  font-size: 20px;
+  font-weight: 500;
+  color: #bcbcbc;
+}
+.container {  
+  display: flex;
+  flex-direction: column; /* Stack the children vertically */
+  align-items: center;    /* Center children horizontally */
+}
+
+.main {
+  color: #f37067;
+  display: flex;
+  // justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #d9eeee;
+  line-height:1.2em;
+  // height: 250px;
+  width: 100%;
+  text-align: center;
+  padding: 20px; 
+}
+.inner {
+  font-size: 14px;
+  font-weight: 500;
+  color: #f37067;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  line-height:1.4em;
+  width: 50%;
+  text-align: center;
+  margin-top: 20px;
+  padding: 45px 15px; 
+  border: 2px solid #bcbcbc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.helpline{
+  margin-top: 15px;
+  text-align: center;
+  color: #f37067;
+  font-weight: 500;
+  font-size: 23px;
+}
+.container h4{
+  font-size: 20px;
+  margin: 0px;
+}
+.fas{
+  font-size: 22px;
+  color: #1a3a54;
+  font-weight: 500;
+}
+.help-num{
+  font-size: 14px;
+  font-weight: 500;
+  color: #31929b;
+}
+img{
+  margin-top: auto;
+  // position: absolute;
+  // bottom: 0px;
+  // left: 50%;
+  height: 100%;
+  width: 100%;
+}
+@media screen and (max-width: 768px){
+  .main{
+    font-size: 18px;
+  }
+  .inner{
+    font-size: 18px;
+    width: 100%;
+  }
+  .helpline{
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 19px;
+  }
+  .fas{
+    font-size: 19px;
+    color: #1a3a54;
+    font-weight: 500;
+  }
+  .help-num{
+    font-size: 12px;
+    color: #31929b;
+  }
+  .agent_page{
+    height: 70px;
+  }
+  // .helpline{
+  //   font-size: 18px;
+  // }
+  .container h4{
+    font-size: 16px;
+  }
+}

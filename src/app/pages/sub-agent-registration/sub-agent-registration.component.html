@@ -1,0 +1,80 @@
+<div class="container agent-page">
+  <div class="container registration-main">
+    <div class="reg-title">SUB-AGENT REGISTRATION:</div>
+    <form [formGroup]="regDtoForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="form-group">
+          <input type="text" class="form-control" formControlName="FullName" placeholder="Sub-Agent Name" required />
+          <div *ngIf="regDtoForm.get('FullName')?.touched && regDtoForm.get('FullName')?.invalid">
+            <small class="text-danger">Name is required.</small>
+          </div>
+
+          <input type="text" class="form-control" formControlName="phoneNumber" placeholder="Sub-Agent Phone Number" required maxlength="13" />
+          <div *ngIf="regDtoForm.get('phoneNumber')?.touched && regDtoForm.get('phoneNumber')?.invalid">
+            <small class="text-danger">Phone Number is required.</small>
+          </div>
+
+          <select id="selectedDivision" formControlName="Division" class="form-control"  (change)='GetdistrictByDivisionId($event)' required>
+            <option selected disabled value="">Division</option>
+            <option *ngFor="let item of division" [value]="item.Id">{{item.Name+' ('+item.NameInBangla+')'}}</option>
+          </select>
+          <div *ngIf="regDtoForm.get('Division')?.touched && regDtoForm.get('Division')?.invalid">
+            <small class="text-danger">Division is required.</small>
+          </div>
+
+          <select id="selectedDistrict" formControlName="District" class="form-control"  (change)='GetSubDistrictByDistrictId($event)' required>
+            <option selected disabled value="">District</option>
+            <option *ngFor="let item of distric" [value]="item.Id">{{item.Name+' ('+item.NameInBangla+')'}}</option>
+          </select>
+          <div *ngIf="regDtoForm.get('District')?.touched && regDtoForm.get('District')?.invalid">
+            <small class="text-danger">District is required.</small>
+          </div>
+
+          <select id="selectedUpaZila" formControlName="SubDistric" class="form-control" required>
+            <option selected disabled value="">Thana</option>
+            <option *ngFor="let item of subDistric" [value]="item.Id">{{item.Name+' ('+item.NameInBangla+')'}}</option>
+          </select>
+          <div *ngIf="regDtoForm.get('SubDistric')?.touched && regDtoForm.get('SubDistric')?.invalid">
+            <small class="text-danger">Thana is required.</small>
+          </div>
+
+          <input type="text" class="form-control" formControlName="Postalcode" placeholder="Postal Code" required />
+          <div *ngIf="regDtoForm.get('Postalcode')?.touched && regDtoForm.get('Postalcode')?.invalid">
+            <small class="text-danger">Postal Code is required and must be less than 5 digits.</small>
+          </div>
+
+          <input type="text" class="form-control" formControlName="Address" placeholder="Address" required />
+          <div *ngIf="regDtoForm.get('Address')?.touched && regDtoForm.get('Address')?.invalid">
+            <small class="text-danger">Address is required.</small>
+          </div>
+
+          <input type="text" class="form-control" formControlName="ShopName" placeholder="Shop Name" />
+          
+
+
+          
+          <input type="number" class="form-control" formControlName="CommissionPercentage" placeholder="Commission Percentage %" required min="0" max="100" maxlength="4"/>
+          <div *ngIf="regDtoForm.get('CommissionPercentage')?.touched && regDtoForm.get('CommissionPercentage')?.invalid">
+            <small class="text-danger">Commission Percentage is required and range is 0 to 100.</small>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <!-- <button type="submit" class="submit-btn" id="agentSubmit" [disabled]="regDtoForm.invalid">Submit</button> -->
+              @if(regDtoForm.valid){
+                <button type="submit" class="submit-btn" id="agentSubmit">Submit</button>
+                }@else {
+                <button type="submit" class="submit-btn2" id="agentSubmit2" [disabled]="regDtoForm.invalid">Submit</button>
+                }
+            </div>
+            <div class="col-6">
+              <button type="button" class="cancel-btn" id="agentSubmit" routerLink="/sub-agent-list">Cancel</button>
+            </div>
+          </div>
+         
+          
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+.fixed-header {
+    background-color: #1a3a54;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added a shadow for better visual effect */
+    
+}
+
+.agent-locator-container {
+    margin-top: 50px; /* Space for the fixed header */
+    padding: 5px;
+}
+
+.card {
+    background-color: #fff;
+    //border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-body {
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1a3a54;
+    letter-spacing: 1px;
+}
+
+.card-date {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6c757d;
+}
+
+.card-message {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.5;
+    text-align: start;
+    margin-top: 10px;
+}
+
+.image-container {
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 3px;
+}
+
+.notification-img {
+    width: 100%; 
+    max-width: 600px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 15px; 
+}
+
+
+@media (max-width: 768px) {
+    .card-body {
+        padding: 15px;
+    }
+    .card-title {
+        font-size: 1.1rem;
+    }
+    .card-date {
+        font-size: 0.8rem;
+    }
+    .card-message {
+        font-size: 1rem;
+    }
+    .notification-img {
+        max-width: 100%; /* Ensures the image is fully responsive on smaller screens */
+    }
+}

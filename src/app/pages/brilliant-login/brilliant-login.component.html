@@ -1,0 +1,63 @@
+<div class="container agent_page"  *ngIf="MsgStatus != null && MsgStatus != ''">
+    <div class="row">
+        <div class="col-12">
+            <h5 id="agent_title">Agent Wallet</h5>
+        </div>
+    </div>
+</div>
+
+<div class="container main" *ngIf="MsgStatus != null && MsgStatus != ''">
+    <div class="row inner">
+        <div class="col-12">
+            <div class="row mb-2" >
+                <div class="col-7 ">
+                    <h4 class="" style="font-weight: 600; color: #1a3a54;">Account Status:</h4>
+                </div>
+                <div class="col-5">
+                   <h4 class="" style="background-color: #1a3a54;display: inline-block;padding: 0px 10px; color: #f1f1f1;">{{ MsgStatus}}</h4> 
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mt-4"></div>
+        <div class="col-12 mt-2">
+            <div class="col-12"  >
+                <h4 class="" style="font-weight: 500;">{{ MsgResult}}</h4> 
+                
+            </div>
+        </div>
+       
+    </div>
+    <div class="col-12 mt-5 fas">
+        FOR ANY SUPPORT
+    </div>
+    <div class="col-12 helpline">
+        09638 11 88 00
+    </div>
+    <div class="col-12 help-num">
+        Brilliant Helpline Number
+    </div>
+
+    <div style="margin-top: 10%;">
+        <img src="./assets/images/Agent page All Elemets.png" alt="">
+    </div>
+
+</div>
+
+
+<!-- <div class="container">
+    
+    <div class="message main" *ngIf="MsgStatus != null && MsgStatus != ''" >
+        
+        {{MsgResult}}
+        {{MsgStatus}}
+    </div>
+</div> -->
+
+<!-- <div class="container">
+    <div *ngIf="MsgStatus != null && MsgStatus != ''" class="message">
+        {{MsgStatus}}
+    </div>
+    <div class="message" *ngIf="MsgResult != null && MsgResult != ''">
+        {{MsgResult}}
+    </div>
+</div> -->
